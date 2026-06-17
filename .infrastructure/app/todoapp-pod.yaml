@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: todoapp-standalone-pod
+  namespace: todoapp
+  labels:
+    app: todoapp-standalone
+spec:
+  containers:
+    - name: todoapp
+      image: ikulyk404/todoapp:4.0.1
+      ports:
+        - containerPort: 8080
+      env:
+        - name: PYTHONUNBUFFERED
+          value: "1"
+      resources:
+        requests:
+          memory: 500m
+          cpu: 1Gi
+        limits:
+          memory: 500m
+          cpu: 1Gi

@@ -17,7 +17,7 @@ spec:
       labels:
         app: {{ .Chart.Name }}
     spec:
-      serviceAccountName: {{ .Values.todoapp.serviceAccount.name }}
+      serviceAccountName: {{ .Chart.Name }}-{{ .Values.todoapp.serviceAccount.name }}
       containers:
       - name: {{ .Values.todoapp.image.name }}
         image: {{ .Values.todoapp.image.repository }}:{{ .Values.todoapp.image.version }}

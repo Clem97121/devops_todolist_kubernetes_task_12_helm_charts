@@ -46,14 +46,7 @@ Confirm that all pods, services, horizontal pod autoscalers (HPA), persistent vo
 kubectl get all,pvc,hpa,ing,sa -n todoapp
 ```
 
-### 5. Validate Environment Variables Setup
-Verify that secrets were dynamically mapped using the template range loops inside the application deployment:
-
-```bash
-kubectl env deployment/todoapp-release -n todoapp
-```
-
-### 6. Verify Log Output
+### 5. Verify Log Output
 The automated validation capture file output.log is generated in the root directory. Ensure it contains the cluster state dump:
 
 ```bash

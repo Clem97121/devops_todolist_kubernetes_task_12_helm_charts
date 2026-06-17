@@ -48,6 +48,9 @@ spec:
           requests:
             cpu: {{ .Values.mysql.resources.requests.cpu }}
             memory: {{ .Values.mysql.resources.requests.memory }}
+          limits:
+            cpu: {{ .Values.mysql.resources.limits.cpu }}
+            memory: {{ .Values.mysql.resources.limits.memory }}
         livenessProbe:
           exec:
             command: ["mysqladmin", "ping"]
